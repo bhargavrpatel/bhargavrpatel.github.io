@@ -1,0 +1,43 @@
+name: Ramblings
+description: I talk about random stuff
+meta_description: ""
+
+aboutPage: true
+
+markdown: markdown
+highlighter: github
+
+gems: [jekyll-paginate]
+paginate: 20
+baseurl: /
+domain_name: 'http://laplace.io'
+google_analytics: 'UA-83526474-1'
+disqus: false
+disqus_shortname: 'your-disqus-shortname'
+
+# Details for the RSS feed generator
+url:            'http://laplace.io'
+author:         'Bhargav Patel'
+authorTwitter:  'bhargavCarleton'
+
+permalink:       /:year/:title/
+
+defaults:
+    -
+        scope:
+            path: "" # empty string for all files
+            type: pages
+        values:
+            layout: default
+    -
+        scope:
+            path: "" # empty string for all files
+            type: posts
+        values:
+            layout: post
+    -
+        scope:
+            path: ""
+            type: drafts
+        values:
+            layout: post
