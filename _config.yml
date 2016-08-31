@@ -1,0 +1,24 @@
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Colloquial
+tagline:          'Ramblings'
+description:      'Indo-Canadian, Colloquial, Unrated. Opinions definately of my own (duh).'
+url:              https://colloquial.me
+
+author:
+  name:           'Bhargav R. Patel'
+  url:            https://colloquial.me
+
+paginate:         5
+
+# Custom vars
+version:          2.0.0
+
+github:           https://github.com/bhargavrpatel
+  repo:           https://github.com/bhargavrpatel/bhargavrpatel.github.io
