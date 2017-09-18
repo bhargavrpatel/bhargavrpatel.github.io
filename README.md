@@ -1,53 +1,53 @@
-# Cactus Theme for Jekyll
+# accent
 
-This is a port of [Cactus](https://github.com/koenbok/Cactus)'s default theme for Jekyll.
-Feel free to fork, change, modify and re-use it.
+#### [Demo & Documentation](http://ankitsultana.com/accent)
 
-## How to use it
+### Installation
 
-Simply clone this repository, and then run `jekyll serve` inside the directory.
-This theme is fully compliant with GH Pages and their dependencies.
-For extra info: [Using Jekyll with Pages](https://help.github.com/articles/using-jekyll-with-pages/#keeping-jekyll-up-to-date).
+I'd strongly recommend you to fork [accent](http://github.com/bk2dcradle/accent) and use the "upstream" strategy described on [this page](https://help.github.com/articles/fork-a-repo/) to
+keep accent up to date.
 
-Cactus theme includes:
+If you don't want to do that, just clone [accent](http://github.com/bk2dcradle/accent) and use
 
-* Pagination
-* Rss feed
-* Google Analytics Tracking code
-* Code Syntax Highlight
-* Author's profile with picture header
-* Twitter/Facebook share buttons
-* Archive posts list under each post
-* Disqus comments
+```bash
+bundle exec jekyll serve
+```
+in the root of the accent directory, or, simply [download](https://github.com/bk2dcradle/accent/archive/gh-pages.zip) accent.
 
-## Screenshots
+### Customization
 
-![index page](https://raw.githubusercontent.com/nickbalestra/kactus/master/assets/images/Kactus-theme-index.png)
-![post page](https://raw.githubusercontent.com/nickbalestra/kactus/master/assets/images/Kactus-theme-post.png)
+You can edit the variables in `_config.yml` as per your needs. Edit only the variables under the section marked *User Settings*.
+
+Most of the variables are self explanatory. Notes about few of the non obvious ones:
+
+1. You can change the **hex value** of the variable `$accent-color` in `_sass/_style.scss` to any color value that you want. This will change the accent of the theme.
+
+2. Set `intro` to `true` to reveal a short bio section on the index page.
+
+3. Setting `about_footer` to *true* or *false* will turn the `about` section at the bottom of every post to *on* or *off* respectively.
+
+4. `description` is the summary that will show up in places like facebook thumbnails,
+twitter cards and google search results.
 
 
-## Thanks
-Most of the work has been already done by the [Cactus for mac authors](https://github.com/koenbok/Cactus/blob/master/AUTHORS), I've just ported their default theme to Jekyll.
-I've also added few things specific to Jekyll and some minor style changes.
+*Note:* Don't change any variable under *Build Settings*.
 
-## Copyright & License
+---
 
-Copyright (c) 2015 [Cactus Authors](https://github.com/koenbok/Cactus/blob/master/AUTHORS) -  Released under the MIT License.
+### Usage
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+* To create a new post, simply save the `.markdown` file in the `_posts` directory in the format.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+```
+year-month-day-name-of-the-file.markdown
+```
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+* For Syntax highlighting, accent uses *Rouge* which is the default highlighter in Jekyll 3 and above. If you don't know how to highlight a code block, [refer](http://jekyllrb.com/docs/templates/).
+
+* To set up Google Analytics tracking id, just set the `tracking_id` variable in `_config.yml`.
+
+---
+
+### License
+
+[MIT](https://github.com/bk2dcradle/accent/blob/gh-pages/LICENSE). Copyright &copy; [Ankit Sultana](http://twitter.com/AnkitSultana)

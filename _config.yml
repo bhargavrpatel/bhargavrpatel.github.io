@@ -1,43 +1,90 @@
-name: Ramblings
-description: I talk about random stuff
-meta_description: ""
+# User Settings | Edit there as per required
 
-aboutPage: true
+title: Ramblings
+url: "http://colloquial.me"
+baseurl: ""
 
-markdown: markdown
-highlighter: github
+# This will show up at the top of index page
+site_heading: >
+    Bhargav <span class="faded">'s blog</span>
 
-gems: [jekyll-paginate]
-paginate: 20
-baseurl: /
-domain_name: 'http://laplace.io'
-google_analytics: 'UA-83526474-1'
-disqus: false
-disqus_shortname: 'your-disqus-shortname'
+email: bhargav.patel@carleton.ca
+author: Bhargav Patel
+# This description will show up in google search results
+# (for index page) etc.
+description: >
+    Welcome! An Indo-Canadian, programmer out here just spitting out verbal diarrhea. 
 
-# Details for the RSS feed generator
-url:            'http://laplace.io'
-author:         'Bhargav Patel'
-authorTwitter:  'bhargavCarleton'
+# This will what will show against &copy; in the footer
+copyright: bhargavrpatel
+# Toggle your short bio, which will displayed on your index page
+# Just toggle it and run jekyll again to see
+intro: false         # Tip: Remove the span from site_heading if intro is set to true
+# This will be displayed in your intro
+short_bio: >
+    Welcome! An <span>Indo-Canadian</span>, programmer out here just spitting out verbal diarrhea.
 
-permalink:       /:year/:title/
+permalink: /:title.html
 
+# Comments are powered by disqus
+comments: false
+
+# keep about_stub roughly 12 words long for best results
+# This will show up at the bottom of each post
+# Note that about_footer should be true if you want
+# to see author information at the bottom of each post
+about_stub: >
+    Avid <span class="capsule">rambler</span>
+
+about_footer: flase
+
+twitter_username: bhargavCarleton
+github_username: yourgithub
+# facebook_id: yourusername
+
+favicon: true
+favicon_location: "images/favicon.ico"
+
+profile_picture: https://avatars0.githubusercontent.com/u/911413
+paginate: 5
+paginate_path: "/page/:num"
+tracking_id: UA-106624228-1  # GA Tracking ID
+
+social_buttons: false
+# Social Stuff | open graph and twitter cards
+# og_image: "images/accent.png" # This will show in facebook thumbnails
+# twitter_image: "http://ankitsultana.com/images/accent.png?1234" # This will show in twitter cards
+
+####################################
+####################################
+####################################
+### Build Settings | Don't Touch ###
+####################################
+####################################
+####################################
+
+markdown: kramdown
+
+gems:
+    - jekyll-paginate
+
+sass:
+    style: compressed
+    sass_dir: _sass
+
+# Scopes
 defaults:
     -
         scope:
-            path: "" # empty string for all files
-            type: pages
+            path:   ""
+            type:   "pages"
         values:
-            layout: default
+            layout: "page"
     -
         scope:
-            path: "" # empty string for all files
-            type: posts
+            path:   ""
+            type:   "posts"
         values:
-            layout: post
-    -
-        scope:
-            path: ""
-            type: drafts
-        values:
-            layout: post
+            layout: "post"
+
+exclude: [vendor] # For travis ci
