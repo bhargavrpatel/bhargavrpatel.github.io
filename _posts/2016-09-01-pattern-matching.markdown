@@ -1,3 +1,9 @@
+---
+title:  "Pattern Matching in Elixir"
+date:   2016-09-01 10:18:00
+description: Basics in Pattern Matching
+---
+
 ```ruby
 iex> a = 1
 1

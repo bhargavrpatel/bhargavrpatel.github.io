@@ -1,86 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="blog, accent, {{ site.author }}, {{ site.title }}, jekyll">
-    <meta name="author" content="{{ site.author }}">
-    {% if page.url == "/404.html" %}
-        <meta http-equiv="refresh" content="5; url=/">
-    {% endif %}
-    {% if page.description %}
-        {% assign desc = page.description %}
-    {% else %}
-        {% assign desc = site.description %}
-    {% endif %}
-    {% if page.url %}
-        {% assign url = site.url | append: site.baseurl | append: page.url %}
-    {% else %}
-        {% assign url = site.url | append: site.baseurl | append: page.url %}
-    {% endif %}
-    <meta name="description" content="{{ desc }}">
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,300,500,700|Ubuntu:400,300,300italic,500,700|Montserrat' rel='stylesheet' type='text/css'>
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS" href="/feed.xml" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
-    {% if site.favicon %}
-        <link rel="icon" type="image/ico" href="{{ site.favicon_location }}">
-        <link rel="shortcut-icon" type="image/ico" href="{{ site.favicon_location }}">
-    {% endif %}
-    {% if site.twitter_username %}
-        <link rel="author" href="https://twitter.com/{{ site.twitter_username }}">
-    {% endif %}
-    <!-- Facebook Open Graph -->
-    <meta name="og:description" content="{{ desc }}">
-    <meta name="og:title" content="{{ site.title }}">
-    <meta name="og:url" content="{{ url }}">
-    <meta name="og:type" content="article">
-    {% if site.og_image %}
-        <meta name="og:image" content="{{ site.og_image }}">
-    {% endif %}
-    {% if site.facebook_id %}
-        <meta name="fb:admins" content="{{ site.facebook_id }}">
-    {% endif %}
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ site.title }}">
-    <meta name="twitter:description" content="{{ desc }}">
-    <meta name="twitter:url" content="{{ url }}">
-    {% if site.twitter_image %}
-        <meta name="twitter:image" content="{{ site.twitter_image }}">
-    {% else %}
-        <meta name="twitter:image" content="{{ site.profile_picture }}">
-    {% endif %}
+    <title>{{ site.name }} - {{ site.description }}</title>
+    <meta name="description" content="{{ site.meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
 </head>
-<body>
-    <div class="wrapper">
-        <div class="main">
-            <nav class="navbar">
-                <a href="{{ site.baseurl }}/">
-                    <span class="alignable pull-left back-outer">
-                        <span class="alignable pull-left back-inner">
-                        </span>
-                    </span>
-                </a>
-            </nav>
-            {{ content }}
-        </div>
-    </div>
-    {% include footer.html %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="{{ site.baseurl }}/js/rrssb.min.js"></script>
+<body class="{% if page.post_class %}{{page.post_class}}{% else %}home-template{% endif %}">
 
-    {% if page.title %}
-        <script src="js/anchor.min.js"></script>
-        <script>
-        anchors.options.placement = 'right'
-        anchors.options.class = 'hide'
-        anchors.add()
-        anchors.remove('.post-title')
-        </script>
-    {% endif %}
-    {% if site.tracking_id %}
-        {% include analytics.html %}
-    {% endif %}
+    {{ content }}
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <a href="{{ site.baseurl }}">{{ site.name }}</a> &copy; 
+              {{"now" | date: "%Y"}} &bull; All rights reserved.
+      </section>
+      <section class="poweredby">Made with Jekyll using 
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+      </section>
+    </footer>
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{{ site.google_analytics }}']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>   
 </body>
+</html>

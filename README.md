@@ -1,53 +1,52 @@
-# accent
+# Kasper
 
-#### [Demo & Documentation](http://ankitsultana.com/accent)
+> This is a port of Ghost's default theme [Casper](https://github.com/tryghost/casper) for Jekyll. 
+Feel free to fork, change, modify and re-use it.
 
-### Installation
+## Installation
 
-I'd strongly recommend you to fork [accent](http://github.com/bk2dcradle/accent) and use the "upstream" strategy described on [this page](https://help.github.com/articles/fork-a-repo/) to
-keep accent up to date.
+    git clone https://github.com/rosario/kasper.git
+    cd kasper
+    gem install jekyll
+    gem install pygments.rb
 
-If you don't want to do that, just clone [accent](http://github.com/bk2dcradle/accent) and use
+## How to use it
 
-```bash
-bundle exec jekyll serve
-```
-in the root of the accent directory, or, simply [download](https://github.com/bk2dcradle/accent/archive/gh-pages.zip) accent.
+Build page and start local web server
 
-### Customization
+    jekyll serve
 
-You can edit the variables in `_config.yml` as per your needs. Edit only the variables under the section marked *User Settings*.
+Build page into `_site` folder
 
-Most of the variables are self explanatory. Notes about few of the non obvious ones:
+    jekyll build
 
-1. You can change the **hex value** of the variable `$accent-color` in `_sass/_style.scss` to any color value that you want. This will change the accent of the theme.
+## Kasper theme includes
 
-2. Set `intro` to `true` to reveal a short bio section on the index page.
+* Pagination
+* Rss
+* Google Analytics Tracking code
+* Code Syntax Highlight
+* Author's profile with picture
+* Disqus comments
 
-3. Setting `about_footer` to *true* or *false* will turn the `about` section at the bottom of every post to *on* or *off* respectively.
+## Screenshots
 
-4. `description` is the summary that will show up in places like facebook thumbnails,
-twitter cards and google search results.
+![index page](https://raw.github.com/rosario/kasper/master/assets/images/kasper-theme-index.png)
+![post page](https://raw.github.com/rosario/kasper/master/assets/images/kasper-theme-post.png)
 
 
-*Note:* Don't change any variable under *Build Settings*.
+## Thanks
 
----
+Most of the work has been already done by the Ghost team, I've just ported Casper to Jekyll. 
+I've also added few things specific to Jekyll and some minor style changes.
 
-### Usage
+## Copyright & License
 
-* To create a new post, simply save the `.markdown` file in the `_posts` directory in the format.
+Copyright (C) 2013 Ghost Foundation - Released under the MIT License.
 
-```
-year-month-day-name-of-the-file.markdown
-```
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-* For Syntax highlighting, accent uses *Rouge* which is the default highlighter in Jekyll 3 and above. If you don't know how to highlight a code block, [refer](http://jekyllrb.com/docs/templates/).
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-* To set up Google Analytics tracking id, just set the `tracking_id` variable in `_config.yml`.
-
----
-
-### License
-
-[MIT](https://github.com/bk2dcradle/accent/blob/gh-pages/LICENSE). Copyright &copy; [Ankit Sultana](http://twitter.com/AnkitSultana)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

@@ -1,9 +1,9 @@
 ---
-layout: about
-title: accent
-author: Bhargav R. Patel
-permalink: /about
+title: About
+permalink: about/
+profile: true
 ---
+
 
 Hi! My name is Bhargav!
 
