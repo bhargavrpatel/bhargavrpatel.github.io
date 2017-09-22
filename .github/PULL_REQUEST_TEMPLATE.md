@@ -1,27 +1,31 @@
-**Context**
-Replace this text with a brief context for the Pull Request.
+<!--- Provide a general summary of your changes in the Title above -->
 
-**Major Changes**
-Replace this section with any of the major changes introduced.
-\- Change 1
-\- Change 2
-\- Change 3
+## Description
+<!--- Describe your changes in detail -->
 
-**Notes for reviewers**
-Replace this with any notes you have for the reviewers
+## Motivation and Context
+<!--- Why is this change required? What problem does it solve? -->
+<!--- If it fixes an open issue, please link to the issue here. -->
 
-**JIRA**
-Replace this with a link to the JIRA ticket
+## How Has This Been Tested?
+<!--- Please describe in detail how you tested your changes. -->
+<!--- Include details of your testing environment, and the tests you ran to -->
+<!--- see how your change affects other areas of the code, etc. -->
 
-**Reference Reading**
-Replace this with any reference links
+## Screenshots (if appropriate):
 
-**Checklist**
-Below is a checklist of tasks you should perform and mark as done if completed, removing any inapplicable ones.
-- [ ] Added Alembic migration
-- [ ] Updated Unataconfig, added/updated schema in tools.config
-- [ ] Added or Updated schema in tools.config
-- [ ] Created a corresponding Infrasturcutre PR
-- [ ] Updated API/Entice documentation
-- [ ] Updated Change log
-- [ ] Added new documentation for a major feature
+## Types of changes
+<!--- What types of changes does your code introduce? Put an `x` in all the boxes that apply: -->
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to change)
+
+## Checklist:
+<!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
+<!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
+- [ ] My code follows the code style of this project.
+- [ ] My change requires a change to the documentation.
+- [ ] I have updated the documentation accordingly.
+- [ ] I have added tests to cover my changes.
+- [ ] All new and existing tests passed.
+
