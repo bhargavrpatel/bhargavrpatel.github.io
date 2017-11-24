@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+section {
+    max-width: 600px;
+    margin: 2rem;
+}
+
+h1 {
+    margin-bottom: 1.2rem;
+}
+
+ul.main-nav {
+    list-style: none;
+    display: block;
+    margin-left: -5px;
+}
+
+li.main-nav{
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-nav a:hover {
+    color: blue;
+}
+
+p {
+    margin-top: 2rem;
+}
+
+.button {
+    /* font-size: 0.9rem; */
+    font-weight: bold;
+    font-family: sans-serif;
+    display: inline-block;
+    border-radius: 3px;
+    padding: 5px;
+    margin-left: -5px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button:active {
+    cursor: pointer;
+    outline: 0;
+    box-shadow: 0 0 0 2px #4c9aff;
+    background: rgb(223, 225, 230);
+}
+
+ul.postList {
+    list-style: none;
+    padding-left: 0;
+}
+
+.post a {
+    color: black;
+    text-decoration: none;
+}
+
+.post a:hover {
+    color: blue;
+}
+
+.post * {
+    font-weight: 100;
+    margin-bottom: 0.5rem;
+}
