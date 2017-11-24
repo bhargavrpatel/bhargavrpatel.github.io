@@ -1,16 +1,24 @@
-name: Ramblings
-description: Indo-Canadian, Colloquial, Unrated
-meta_description: "Ramblings of a madman"
+# Dependencies
+markdown:         redcarpet
+pygments:         true
 
-markdown: kramdown
-highlighter: rouge
-logo: true
-paginate: 15
-baseurl: /
-domain_name: 'http://colloquial.me'
-google_analytics: 'UA-106624228-1'
-gems: [jekyll-paginate]
+# Permalinks
+permalink:        pretty
 
-# Details for the RSS feed generator
-url:            'http://colloquial.me'
-author:         'Bhargav R. Patel'
+# Setup
+title:            Colloquial
+tagline:          'Ramblings'
+description:      'Indo-Canadian, Colloquial, Unrated. Opinions definately of my own (duh).'
+url:              https://colloquial.me
+
+author:
+  name:           'Bhargav R. Patel'
+  url:            https://colloquial.me
+
+paginate:         5
+
+# Custom vars
+version:          2.0.0
+
+github:           https://github.com/bhargavrpatel
+  repo:           https://github.com/bhargavrpatel/bhargavrpatel.github.io
