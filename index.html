@@ -1,24 +1,70 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Colloquial • a blog about everything and nothing</title>
+    <link rel="stylesheet" href="assets/css/normalize.css" />
+    <link rel="stylesheet" href="assets/css/gridism.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style type="text/css">
+      section ul {
+        list-style: square;
+        padding-left: 20px;
+      }
 
-<head>
-    <title>Colloquial</title>
+      section ul li {
+        margin-bottom: 0.5em;
+      }
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+      header h1 {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
 
-    <link rel="stylesheet" href="assets/css/iota.css">
-    <link rel="stylesheet" href="assets/css/main.css">
+      @media screen and (max-width: 568px) {
+        /* Hide bullets on mobile */
+        section ul {
+          list-style: none;
+          padding-left: 0;
+        }
+      }
+    </style>
+  </head>
 
-</head>
-
-<body>
-
+  <body class="wrap wider">
     <header>
-        <h1 class="gris">Colloquial</h1>
-        <em>Colloquial</em>
+      <div class="grid">
+        <div class="logo unit whole center-on-mobiles">
+          <h1>Colloquial</h1>
+          <aside>
+            Explorations, personal opinions, notes, and random shit.
+          </aside>
+        </div>
+      </div>
     </header>
 
-</body>
+    <section>
+      <div class="grid">
+        <div class="logo unit whole">
+          <h3>Posts</h3>
+          <ul>
+            <li>
+              <span class="published-date hide-on-mobiles"
+                >October 2019 —
+              </span>
+              <a href="#">TBD</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
+    <footer>
+      <div class="grid">
+        <div class="logo unit half">
+          <p>© Bhargav R. Patel — All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
