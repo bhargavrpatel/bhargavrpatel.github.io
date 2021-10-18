@@ -27,5 +27,8 @@
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
     <script src='{{ site.baseurl }}/public/js/script.js'></script>
+    {% if site.goat_counter_url %}
+    <script data-goatcounter="{{ goat_counter_url }}" async src="//gc.zgo.at/count.js"></script>
+    {% endif %}
   </body>
 </html>
