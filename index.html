@@ -1,75 +1,37 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Colloquial • a blog about everything and nothing</title>
-    <link rel="stylesheet" href="assets/css/normalize.css" />
-    <link rel="stylesheet" href="assets/css/gridism.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <style type="text/css">
-      section ul {
-        list-style: square;
-        padding-left: 20px;
-      }
+---
+layout: default
+title: Home
+---
 
-      section ul li {
-        margin-bottom: 0.5em;
-      }
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url | absolute_url }}">
+        {{ post.title }}
+      </a>
+    </h1>
 
-      header h1 {
-        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-      }
+    <span class="post-date">{{ post.date | date_to_string }}</span>
 
-      @media screen and (max-width: 568px) {
-        /* Hide bullets on mobile */
-        section ul {
-          list-style: none;
-          padding-left: 0;
-        }
-      }
-    </style>
-  </head>
+    {{ post.content }}
+  </div>
+  {% endfor %}
+</div>
 
-  <body class="wrap wider">
-    <header>
-      <div class="grid">
-        <div class="logo unit whole center-on-mobiles">
-          <h1>Colloquial</h1>
-          <aside>
-            Explorations, personal opinions, notes, and random shit.
-          </aside>
-        </div>
-      </div>
-    </header>
-
-    <section>
-      <div class="grid">
-        <div class="logo unit whole">
-          <h3>Posts</h3>
-          <ul>
-            <li>
-              <span class="published-date hide-on-mobiles"
-                >October 2019 —
-              </span>
-              <a href="#">TBD</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="grid">
-        <div class="logo unit half">
-          <p>© Bhargav R. Patel — All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-
-    <script data-goatcounter="https://bhargavrpatel.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-
-  </body>
-</html>
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ paginator.next_page_path | absolute_url }}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ '/' | absolute_url }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ paginator.previous_page_path | absolute_url }}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
