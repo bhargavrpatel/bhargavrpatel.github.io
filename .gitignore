@@ -3,3 +3,5 @@ _site/
 .DS_Store
 .NOTES
 drafts/
+.pytest_cache
+.jekyll-cache

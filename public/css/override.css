@@ -1,0 +1,18 @@
+body {
+    font-size: 0.8em;
+}
+
+a, a:hover, a:visited {
+    color: #b00;
+}
+
+a:hover {
+    background: rgb(236, 225, 179);
+}
+
+
+@media (max-width: 48em) {
+    .hide-on-mobiles {
+      display: none;
+    }
+}
