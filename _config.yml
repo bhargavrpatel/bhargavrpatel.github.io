@@ -1,0 +1,22 @@
+# Setup
+title:               Colloquial
+tagline:             'Explorations, personal opinions, notes, and random shit.'
+description:         'Explorations, personal opinions, notes, and random shit.'
+url:                 https://colloquial.me
+baseurl:             ''
+paginate:            5
+permalink:           pretty
+
+# About/contact
+author:
+  name:              Bhargav R. Patel
+  url:               https://colloquial.me
+  email:             blog@colloquial.me
+
+# Gems
+plugins:
+  - jekyll-paginate
+
+# Custom vars
+version:             1.1.0
+google_analytics_id: UA-106624228-1
