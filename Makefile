@@ -2,11 +2,11 @@ PY?=
 PELICAN?=pelican
 PELICANOPTS=
 
-BASEDIR=$(CURDIR)/src
-INPUTDIR=$(BASEDIR)/content
-OUTPUTDIR=$(BASEDIR)/../output
-CONFFILE=$(BASEDIR)/pelicanconf.py
-PUBLISHCONF=$(BASEDIR)/publishconf.py
+BASEDIR=./src
+INPUTDIR=./src/content
+OUTPUTDIR=./docs
+CONFFILE=./src/pelicanconf.py
+PUBLISHCONF=./src/publishconf.py
 
 
 DEBUG ?= 0
@@ -31,6 +31,7 @@ help:
 	@echo 'Makefile for a pelican Web site                                           '
 	@echo '                                                                          '
 	@echo 'Usage:                                                                    '
+	@echo '   make format                         Black-ens all Python code          '
 	@echo '   make html                           (re)generate the web site          '
 	@echo '   make clean                          remove the generated files         '
 	@echo '   make regenerate                     regenerate files upon modification '
@@ -44,31 +45,36 @@ help:
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
 
+format:
+	poetry run isort src
+	poetry run black src
+	poetry run djlint --reformat src/themes/colloquial/templates/*.html
+
 html:
-	pelican-themes -r colloquial &&\
-	pelican-themes -U src/themes/colloquial &&\
-	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	poetry run pelican-themes -r colloquial &&\
+	poetry run pelican-themes -U src/themes/colloquial &&\
+	poetry run pelican ./src/content -o ./docs -s ./src/pelicanconf.py $(PELICANOPTS)
 
 clean:
 	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"
 
 regenerate:
-	"$(PELICAN)" -r "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	poetry run pelican -r ./src/content -o ./docs -s ./src/pelicanconf.py $(PELICANOPTS)
 
 serve:
-	"$(PELICAN)" -l "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	poetry run pelican -l ./src/content -o ./docs -s ./src/pelicanconf.py $(PELICANOPTS)
 
 serve-global:
-	"$(PELICAN)" -l "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS) -b $(SERVER)
+	poetry run pelican -l ./src/content -o ./docs -s ./src/pelicanconf.py $(PELICANOPTS) -b $(SERVER)
 
 devserver:
-	"$(PELICAN)" -lr "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	poetry run pelican -lr ./src/content -o ./docs -s ./src/pelicanconf.py $(PELICANOPTS)
 
 devserver-global:
-	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -b 0.0.0.0
+	poetry run pelican -lr ./src/content -o ./docs -s ./src/pelicanconf.py $(PELICANOPTS) -b 0.0.0.0
 
 publish:
-	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
+	poetry run pelican ./src/content -o ./docs -s ./src/pelicanconf.py $(PELICANOPTS)
 
 
 .PHONY: html help clean regenerate serve serve-global devserver publish

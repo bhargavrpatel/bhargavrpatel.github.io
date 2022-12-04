@@ -1,24 +1,29 @@
 [[package]]
-name = "attrs"
-version = "22.1.0"
-description = "Classes Without Boilerplate"
-category = "main"
-optional = false
-python-versions = ">=3.5"
-
-[package.extras]
-dev = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "mypy (>=0.900,!=0.940)", "pytest-mypy-plugins", "zope.interface", "furo", "sphinx", "sphinx-notfound-page", "pre-commit", "cloudpickle"]
-docs = ["furo", "sphinx", "zope.interface", "sphinx-notfound-page"]
-tests = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "mypy (>=0.900,!=0.940)", "pytest-mypy-plugins", "zope.interface", "cloudpickle"]
-tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "mypy (>=0.900,!=0.940)", "pytest-mypy-plugins", "cloudpickle"]
-
-[[package]]
 name = "blinker"
 version = "1.5"
 description = "Fast, simple object-to-object and broadcast signaling"
 category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "click"
+version = "8.1.3"
+description = "Composable command line interface toolkit"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[[package]]
+name = "colorama"
+version = "0.4.6"
+description = "Cross-platform colored terminal text."
+category = "dev"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 
 [[package]]
 name = "commonmark"
@@ -32,6 +37,41 @@ python-versions = "*"
 test = ["flake8 (==3.7.8)", "hypothesis (==3.55.3)"]
 
 [[package]]
+name = "cssbeautifier"
+version = "1.14.7"
+description = "CSS unobfuscator and beautifier."
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+editorconfig = ">=0.12.2"
+jsbeautifier = "*"
+six = ">=1.13.0"
+
+[[package]]
+name = "djlint"
+version = "1.19.7"
+description = "HTML Template Linter and Formatter"
+category = "dev"
+optional = false
+python-versions = ">=3.7.2,<4.0.0"
+
+[package.dependencies]
+click = ">=8.0.1,<9.0.0"
+colorama = ">=0.4.4,<0.5.0"
+cssbeautifier = ">=1.14.4,<2.0.0"
+html-tag-names = ">=0.1.2,<0.2.0"
+html-void-elements = ">=0.1.0,<0.2.0"
+importlib-metadata = ">=5.0.0,<6.0.0"
+jsbeautifier = ">=1.14.4,<2.0.0"
+pathspec = ">=0.10.0,<0.11.0"
+PyYAML = ">=6.0,<7.0"
+regex = ">=2022.1.18,<2023.0.0"
+tomli = {version = ">=2.0.1,<3.0.0", markers = "python_version < \"3.11\""}
+tqdm = ">=4.62.2,<5.0.0"
+
+[[package]]
 name = "docutils"
 version = "0.19"
 description = "Docutils -- Python Documentation Utilities"
@@ -40,21 +80,12 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
-name = "environ-config"
-version = "22.1.0"
-description = "Boilerplate-free configuration with env variables."
-category = "main"
+name = "editorconfig"
+version = "0.12.3"
+description = "EditorConfig File Locator and Interpreter for Python"
+category = "dev"
 optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-attrs = ">=17.4.0"
-
-[package.extras]
-aws = ["boto3"]
-dev = ["boto3", "pytest", "coverage", "moto", "sphinx", "furo", "pre-commit"]
-docs = ["sphinx", "furo"]
-tests = ["pytest", "coverage", "moto"]
+python-versions = "*"
 
 [[package]]
 name = "feedgenerator"
@@ -66,6 +97,22 @@ python-versions = ">=3.6"
 
 [package.dependencies]
 pytz = ">=0a"
+
+[[package]]
+name = "html-tag-names"
+version = "0.1.2"
+description = "List of known HTML tag names"
+category = "dev"
+optional = false
+python-versions = ">=3.7,<4.0"
+
+[[package]]
+name = "html-void-elements"
+version = "0.1.0"
+description = "List of HTML void tag names."
+category = "dev"
+optional = false
+python-versions = ">=3.7,<4.0"
 
 [[package]]
 name = "importlib-metadata"
@@ -98,6 +145,32 @@ MarkupSafe = ">=2.0"
 i18n = ["Babel (>=2.7)"]
 
 [[package]]
+name = "jsbeautifier"
+version = "1.14.7"
+description = "JavaScript unobfuscator and beautifier."
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+editorconfig = ">=0.12.2"
+six = ">=1.13.0"
+
+[[package]]
+name = "lxml"
+version = "4.9.1"
+description = "Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API."
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, != 3.4.*"
+
+[package.extras]
+cssselect = ["cssselect (>=0.7)"]
+html5 = ["html5lib"]
+htmlsoup = ["beautifulsoup4"]
+source = ["Cython (>=0.29.7)"]
+
+[[package]]
 name = "markdown"
 version = "3.4.1"
 description = "Python implementation of Markdown."
@@ -116,6 +189,25 @@ name = "markupsafe"
 version = "2.1.1"
 description = "Safely add untrusted strings to HTML/XML markup."
 category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "minchin.pelican.plugins.nojekyll"
+version = "1.1.1"
+description = "Pelican plugin that adds a `.nojekyll` file to the output root. Useful for publishing to Github Pages. Written in Python."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+pelican = "*"
+
+[[package]]
+name = "pathspec"
+version = "0.10.2"
+description = "Utility library for gitignore style pattern matching of file paths."
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -173,6 +265,22 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "pyyaml"
+version = "6.0"
+description = "YAML parser and emitter for Python"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
+name = "regex"
+version = "2022.10.31"
+description = "Alternative regular expression module, to replace re."
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "rich"
 version = "12.6.0"
 description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
@@ -194,6 +302,31 @@ description = "Python 2 and 3 compatibility utilities"
 category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "tqdm"
+version = "4.64.1"
+description = "Fast, Extensible Progress Meter"
+category = "dev"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[package.extras]
+dev = ["py-make (>=0.1.0)", "twine", "wheel"]
+notebook = ["ipywidgets (>=6)"]
+slack = ["slack-sdk"]
+telegram = ["requests"]
 
 [[package]]
 name = "unidecode"
@@ -218,24 +351,37 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "flake8 (<5)", "pytest-co
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "25047f5ac4be2cb1487036fdf8ad2e8eb65b4416ca748b64bb43756e37a2ba46"
+content-hash = "d2effd8adb7243507523f5016cd83336a9bb7f243b575f7473e0964d60090845"
 
 [metadata.files]
-attrs = []
 blinker = []
+click = []
+colorama = []
 commonmark = []
+cssbeautifier = []
+djlint = []
 docutils = []
-environ-config = []
+editorconfig = []
 feedgenerator = []
+html-tag-names = []
+html-void-elements = []
 importlib-metadata = []
 jinja2 = []
+jsbeautifier = []
+lxml = []
 markdown = []
 markupsafe = []
+"minchin.pelican.plugins.nojekyll" = []
+pathspec = []
 pelican = []
 pygments = []
 python-dateutil = []
 pytz = []
+pyyaml = []
+regex = []
 rich = []
 six = []
+tomli = []
+tqdm = []
 unidecode = []
 zipp = []

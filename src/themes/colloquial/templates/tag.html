@@ -1,8 +1,10 @@
 {% extends "base.html" %}
-{% block title %}{{ SITENAME }} - All Posts{% endblock %}
+{% block title %}{{ SITENAME }} - {{ tag.name }}{% endblock %}
 <!-- Content -->
 {% block content %}
-    <h3>All Posts</h3>
+    <h3>
+        Posts using tag <em>#{{ tag.name }}</em>
+    </h3>
     {% with posts=dates %}
         {% include "blog_list.html" %}
     {% endwith %}

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
-<!-- Page specific styles -->
+{% block title %}{{ SITENAME }} - All tags{% endblock %}
+<!-- Pagestyles -->
 {% block page_styles %}
     <style type="text/css">
   section ul {
@@ -22,9 +23,14 @@
 {% endblock %}
 <!-- Content -->
 {% block content %}
-    <h3>Posts</h3>
-    {% with posts=articles_page.object_list %}
-        {% include "blog_list.html" %}
-    {% endwith %}
-    <a href="{{ SITEURL }}/archives.html">Read More</a>
+    <h3>
+    All Tags</em>
+</h3>
+<ul>
+    {% for tag, articles in tags|sort %}
+        <li>
+            <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})
+        </li>
+    {% endfor %}
+</ul>
 {% endblock %}

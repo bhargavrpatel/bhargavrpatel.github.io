@@ -1,4 +1,3 @@
-{% extends "base.html" %}
 <!-- Page specific styles -->
 {% block page_styles %}
     <style type="text/css">
@@ -21,10 +20,13 @@
     </style>
 {% endblock %}
 <!-- Content -->
-{% block content %}
-    <h3>Posts</h3>
-    {% with posts=articles_page.object_list %}
-        {% include "blog_list.html" %}
-    {% endwith %}
-    <a href="{{ SITEURL }}/archives.html">Read More</a>
+{% block posts %}
+    <ul>
+        {% for post in posts %}
+            <li>
+                <span class="published-date hide-on-mobiles">{{ post.date.strftime('%B %-Y') }} —</span>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
