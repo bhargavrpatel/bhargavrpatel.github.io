@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+<!-- Page specific styles -->
+{% block page_styles %}
+<style type="text/css">
+  section ul {
+    list-style: square;
+    padding-left: 20px;
+  }
+
+  section ul li {
+    margin-bottom: 0.5em;
+  }
+</style>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+<h3>All Posts</h3>
+<ul>
+  {% for article in dates %}
+  <li>
+    <!-- <span class="published-date hide-on-mobiles">October 2019 —</span> -->
+    <span class="published-date hide-on-mobiles">
+      {{ article.date.strftime('%B %-Y') }} —
+    </span>
+    <a href="{{ article.url }}">{{ article.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
