@@ -1,0 +1,23 @@
+{
+  "name": "bagofsudama",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx eleventy --pathprefix=\"/\"",
+    "serve": "npx eleventy --serve --pathprefix=\"/\"",
+    "debug": "DEBUG=* npx eleventy --pathprefix=\"/\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+    "gh-pages": "^6.1.1",
+    "markdown-it": "^14.1.0",
+    "markdown-it-hashtag": "^0.4.0",
+    "netlify-plugin-cache": "^1.0.3"
+  }
+}

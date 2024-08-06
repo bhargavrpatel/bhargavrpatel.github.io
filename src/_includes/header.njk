@@ -1,0 +1,17 @@
+<header>
+    <div class="grid">
+        <div class="logo unit whole center-on-mobiles">
+            {% if title %}
+                <h1><a href="/">{{ site.name }}</a> / {{ title }}</h1>
+                <p>
+                    <aside>Published: {{ page.date | formatDate }}</aside>
+                </p>
+            {% else %}
+                <h1>{{ site.name }}</h1>
+                <aside>
+                    {{ site.description }}
+                </aside>
+            {% endif %}
+        </div>
+    </div>
+</header>
